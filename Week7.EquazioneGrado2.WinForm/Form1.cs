@@ -22,10 +22,6 @@ namespace Week7.EquazioneGrado2.WinForm
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void btnCalcola_Click(object sender, EventArgs e)
         {
