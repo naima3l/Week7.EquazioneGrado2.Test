@@ -16,7 +16,6 @@ namespace Week7.EquazioneGrado2.WinForm
         private double a;
         private double b;
         private double c;
-        private double res;
         private Equation equation = new Equation();
         public Form1()
         {
@@ -28,23 +27,12 @@ namespace Week7.EquazioneGrado2.WinForm
 
         }
 
-        private void txtA_TextChanged(object sender, EventArgs e)
-        {
-            a = double.Parse(txtA.Text);
-        }
-
-        private void txtB_TextChanged(object sender, EventArgs e)
-        {
-            b = double.Parse(txtB.Text);
-        }
-
-        private void txtC_TextChanged(object sender, EventArgs e)
-        {
-            c = double.Parse(txtC.Text);
-        }
-
         private void btnCalcola_Click(object sender, EventArgs e)
         {
+            a = double.Parse(txtA.Text);
+            b = double.Parse(txtB.Text);
+            c = double.Parse(txtC.Text);
+
             var risultato = equation.RisolviEquazioneDiSecondoGrado(a, b, c);
 
             if(risultato == null)
@@ -56,6 +44,10 @@ namespace Week7.EquazioneGrado2.WinForm
                 txtRes.Text = $"x1 = {risultato[0]} \nx2= {risultato[1]}";
             }
             else txtRes.Text = $"x1 = x2 = {risultato[0]} ";
+
+            txtA.Clear();
+            txtB.Clear();
+            txtC.Clear();
         }
     }
 }
